@@ -20,6 +20,16 @@ const scene = new THREE.Scene()
  */
 const textureLoader = new THREE.TextureLoader()
 
+// fonts
+const fontLoader = new THREE.FontLoader()
+
+fontLoader.load(
+    "/fonts/helvetiker_regular.typeface.json",
+    ()=>{
+        console.log("font loaded");
+    }
+)
+
 /**
  * Object
  */
