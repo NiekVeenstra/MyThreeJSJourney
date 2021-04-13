@@ -43,10 +43,19 @@ directionalLight.shadow.camera.bottom = -2;
 directionalLight.shadow.camera.left = -2;
 directionalLight.shadow.camera.near = 1;
 directionalLight.shadow.camera.far = 5;
+// directionalLight.shadow.radius = 10;
 
 const directionalLightCameraHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
 directionalLightCameraHelper.visible = false;
 scene.add(directionalLightCameraHelper);
+
+// spot light
+const spotLight = new THREE.SpotLight(0xffffff, 0.4, 10, Math.Pi * 0.3);
+
+spotLight.castShadow = true;
+
+spotLight.getWorldPosition.set(0, 2, 2);
+scene.add(spotLight);
 
 /**
  * Materials
@@ -116,6 +125,7 @@ renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 /**
  * Animate
