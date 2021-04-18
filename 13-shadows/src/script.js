@@ -77,7 +77,7 @@ spotLightCameraHelper.visible = false
 scene.add(spotLightCameraHelper)
 
 // Point light
-const pointLight = new THREE.PointLight(0xffffff, 0.3)
+const pointLight = new THREE.PointLight(0xffffff, 0.4)
 
 pointLight.castShadow = true
 
